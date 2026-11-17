@@ -41,7 +41,7 @@ const memories = [
 
   {
     id: 5,
-    src: "assets/images/memories/memory-05.JPG",
+    src: "assets/images/memories/memory-05.jpg",
     category: "her",
     title: "Simply beautiful",
     date: "A favorite memory",
@@ -50,7 +50,7 @@ const memories = [
 
   {
     id: 6,
-    src: "assets/images/memories/memory-06.JPG",
+    src: "assets/images/memories/memory-06.jpg",
     category: "special",
     title: "Forever in my heart",
     date: "A day I'll never forget",
