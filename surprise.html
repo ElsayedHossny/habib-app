@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#171329">
+
+    <title>Your Birthday Surprise ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/surprise.css">
+
+    <!-- Script -->
+    <script src="./js/surprise.js" defer></script>
+</head>
+
+<body>
+
+    <main class="surprise-page">
+
+        <!-- Background Effects -->
+        <div class="surprise-glow"></div>
+        <div class="confetti-container" id="confettiContainer"></div>
+
+        <!-- Gift Stage -->
+        <section class="gift-stage" id="giftStage">
+
+            <p class="surprise-label">
+                SOMETHING SPECIAL IS WAITING FOR YOU
+            </p>
+
+            <h1 class="surprise-heading">
+                A Little Gift
+                <span>Just For You</span>
+            </h1>
+
+            <p class="gift-instruction" id="giftInstruction">
+                I wonder what's inside...
+            </p>
+
+            <!-- Gift Box -->
+            <button class="gift-button" id="giftButton" aria-label="Open your birthday gift">
+
+                <span class="gift-glow"></span>
+
+                <span class="gift-box">
+
+                    <span class="gift-lid">
+                        <span class="gift-bow"></span>
+                    </span>
+
+                    <span class="gift-base">
+                        <span class="gift-ribbon"></span>
+                        <span class="gift-ribbon-horizontal"></span>
+                    </span>
+
+                </span>
+
+            </button>
+
+            <p class="gift-hint">
+                TAP TO OPEN YOUR GIFT ✨
+            </p>
+
+        </section>
+
+
+        <!-- Birthday Reveal -->
+        <section class="birthday-reveal" id="birthdayReveal" aria-live="polite" hidden>
+
+            <div class="reveal-sparkle">✧</div>
+
+            <p class="reveal-label">
+                TODAY IS ALL ABOUT YOU
+            </p>
+
+            <!-- Birthday Photo -->
+            <div class="birthday-photo">
+                <img src="./assets/images/birthday.jpg" alt="A special birthday memory" id="birthdayImage" />
+
+                <span class="photo-heart">♡</span>
+            </div>
+
+            <h1 class="birthday-title">
+                Happy Birthday
+            </h1>
+
+            <h2 class="birthday-name" id="birthdayName">
+                My Love ❤️
+            </h2>
+
+            <p class="birthday-message" id="birthdayMessage">
+                You make this world a more beautiful place.
+                I hope your day is as wonderful as you are.
+            </p>
+
+            <div class="reveal-decoration">
+                <span>♡</span>
+                <span>Habiba Nor</span>
+                <span>♡</span>
+            </div>
+
+            <a href="home.html" class="explore-button" id="exploreButton">
+                Explore Our Story
+                <span>→</span>
+            </a>
+
+            <p class="reveal-footer">
+                MADE WITH ALL MY LOVE
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

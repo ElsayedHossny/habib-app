@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Memories | A Little Piece of Us</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/memories.css">
+
+    <script src="js/memories.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="memories-header">
+        <a href="home.html" class="brand">Our Little World</a>
+
+        <nav class="memories-nav" aria-label="Main navigation">
+            <a href="home.html">Home</a>
+            <a href="memories.html" class="active">Memories</a>
+            <a href="timeline.html">Timeline</a>
+            <a href="letter.html">A Letter</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Page Introduction -->
+        <section class="memories-intro">
+            <span class="eyebrow">A collection of little moments</span>
+
+            <h1>Every picture tells <em>our story.</em></h1>
+
+            <p>
+                Some moments deserve to stay forever.
+                Here are a few of my favorite pieces of us.
+            </p>
+
+            <div class="intro-decoration">♡</div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="gallery-section">
+
+            <div class="gallery-heading">
+                <div>
+                    <span class="eyebrow">The photo album</span>
+                    <h2>Our favorite memories</h2>
+                </div>
+
+                <p id="photo-count" aria-live="polite"></p>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="gallery-filters" aria-label="Filter memories">
+                <button class="filter-btn active" data-filter="all">
+                    All moments
+                </button>
+
+                <button class="filter-btn" data-filter="together">
+                    Together
+                </button>
+
+                <button class="filter-btn" data-filter="her">
+                    Her
+                </button>
+
+                <button class="filter-btn" data-filter="special">
+                    Special moments
+                </button>
+            </div>
+
+            <!-- Images will be rendered by JavaScript -->
+            <div class="memories-grid" id="memories-grid"></div>
+
+            <p class="gallery-note">
+                Made of moments, held together by love. ♡
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Image Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Memory viewer" aria-hidden="true"
+        hidden>
+
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">
+            &times;
+        </button>
+
+        <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+            &#10094;
+        </button>
+
+        <div class="lightbox-content">
+
+            <div class="lightbox-image-wrapper">
+                <img id="lightbox-image" src="" alt="">
+            </div>
+
+            <div class="lightbox-caption">
+                <span id="lightbox-date"></span>
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+            </div>
+
+            <div class="lightbox-counter" id="lightbox-counter"></div>
+
+        </div>
+
+        <button class="lightbox-arrow lightbox-next" id="lightbox-next" aria-label="Next image">
+            &#10095;
+        </button>
+
+    </div>
+
+    <footer class="memories-footer">
+        <p>In every universe, I'd choose you. ♡</p>
+        <a href="home.html">Back to our little world</a>
+    </footer>
+
+</body>
+
+</html>

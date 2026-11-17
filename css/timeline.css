@@ -1,0 +1,429 @@
+/* ==============================
+   Timeline Page
+============================== */
+
+:root {
+    --timeline-bg: #fbf5fa;
+    --timeline-card: #ffffff;
+    --timeline-text: #40324b;
+    --timeline-muted: #897b8e;
+    --timeline-pink: #d88caf;
+    --timeline-lavender: #eee4f4;
+    --timeline-border: #eadde9;
+    --timeline-heading: "Playfair Display", serif;
+    --timeline-body: "DM Sans", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--timeline-bg);
+    color: var(--timeline-text);
+    font-family: var(--timeline-body);
+}
+
+/* ==============================
+   Navigation
+============================== */
+
+.timeline-header {
+    width: min(1120px, 90%);
+    margin: auto;
+    padding: 25px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    color: var(--timeline-text);
+    text-decoration: none;
+    font-family: var(--timeline-heading);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.timeline-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.timeline-nav a {
+    color: var(--timeline-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.25s ease;
+}
+
+.timeline-nav a:hover,
+.timeline-nav a.active {
+    color: var(--timeline-pink);
+}
+
+/* ==============================
+   Introduction
+============================== */
+
+.timeline-intro {
+    text-align: center;
+    padding: 85px 20px 65px;
+}
+
+.eyebrow {
+    display: block;
+    color: var(--timeline-pink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.timeline-intro h1 {
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: var(--timeline-heading);
+    font-size: clamp(38px, 6vw, 65px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.timeline-intro h1 em {
+    color: var(--timeline-pink);
+    font-weight: 400;
+}
+
+.timeline-intro p {
+    max-width: 470px;
+    margin: auto;
+    color: var(--timeline-muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.intro-heart {
+    color: var(--timeline-pink);
+    font-size: 28px;
+    margin-top: 25px;
+}
+
+/* ==============================
+   Timeline Section
+============================== */
+
+.timeline-section {
+    width: min(1000px, 90%);
+    margin: auto;
+    padding: 30px 0 80px;
+}
+
+.timeline-heading {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.timeline-heading h2 {
+    font-family: var(--timeline-heading);
+    font-size: 35px;
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+/* Timeline Container */
+
+.timeline-container {
+    position: relative;
+    padding: 15px 0;
+}
+
+/* Vertical line */
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--timeline-border);
+    transform: translateX(-50%);
+}
+
+/* ==============================
+   Timeline Events
+============================== */
+
+.timeline-events {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+}
+
+.timeline-event {
+    position: relative;
+    width: 50%;
+    padding: 0 45px;
+
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-event.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Left and Right */
+
+.timeline-event:nth-child(odd) {
+    align-self: flex-start;
+    text-align: right;
+}
+
+.timeline-event:nth-child(even) {
+    align-self: flex-end;
+    text-align: left;
+}
+
+/* Timeline Dot */
+
+.timeline-event::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--timeline-pink);
+    border: 4px solid var(--timeline-bg);
+    box-shadow: 0 0 0 2px var(--timeline-border);
+    z-index: 2;
+}
+
+.timeline-event:nth-child(odd)::before {
+    right: -7px;
+}
+
+.timeline-event:nth-child(even)::before {
+    left: -7px;
+}
+
+/* Event Date */
+
+.timeline-date {
+    display: inline-block;
+    color: var(--timeline-pink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+/* Event Card */
+
+.timeline-card {
+    background: var(--timeline-card);
+    border: 1px solid var(--timeline-border);
+    border-radius: 5px;
+    padding: 13px;
+    box-shadow: 0 10px 30px rgba(64, 50, 75, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(64, 50, 75, 0.1);
+}
+
+.timeline-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background: var(--timeline-lavender);
+}
+
+.timeline-card-content {
+    padding: 18px 8px 10px;
+}
+
+.timeline-card-content h3 {
+    font-family: var(--timeline-heading);
+    font-size: 23px;
+    font-weight: 500;
+    margin: 0 0 10px;
+}
+
+.timeline-card-content p {
+    color: var(--timeline-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ==============================
+   Timeline Ending
+============================== */
+
+.timeline-ending {
+    text-align: center;
+    padding: 80px 15px 20px;
+}
+
+.timeline-ending span {
+    display: inline-block;
+    color: var(--timeline-pink);
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.timeline-ending h2 {
+    font-family: var(--timeline-heading);
+    font-size: 31px;
+    font-weight: 500;
+    margin: 0 0 12px;
+}
+
+.timeline-ending p {
+    color: var(--timeline-muted);
+    font-size: 13px;
+}
+
+/* ==============================
+   CTA
+============================== */
+
+.timeline-cta {
+    text-align: center;
+    padding: 40px 20px 85px;
+}
+
+.timeline-cta p {
+    color: var(--timeline-muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.timeline-button {
+    display: inline-block;
+    padding: 13px 25px;
+    background: var(--timeline-text);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 12px;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.timeline-button:hover {
+    background: var(--timeline-pink);
+    transform: translateY(-3px);
+}
+
+/* ==============================
+   Footer
+============================== */
+
+.timeline-footer {
+    border-top: 1px solid var(--timeline-border);
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.timeline-footer p {
+    font-family: var(--timeline-heading);
+    font-size: 19px;
+    margin: 0 0 12px;
+}
+
+.timeline-footer a {
+    color: var(--timeline-pink);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/* ==============================
+   Responsive
+============================== */
+
+@media (max-width: 750px) {
+    .timeline-header {
+        flex-direction: column;
+    }
+
+    .timeline-nav {
+        gap: 17px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .timeline-nav a {
+        font-size: 12px;
+    }
+
+    .timeline-intro {
+        padding: 60px 20px 45px;
+    }
+
+    .timeline-section {
+        width: 92%;
+    }
+
+    .timeline-heading {
+        margin-bottom: 45px;
+    }
+
+    /* Move line to the left */
+
+    .timeline-line {
+        left: 10px;
+    }
+
+    .timeline-event,
+    .timeline-event:nth-child(odd),
+    .timeline-event:nth-child(even) {
+        width: 100%;
+        align-self: stretch;
+        text-align: left;
+        padding: 0 0 0 38px;
+    }
+
+    .timeline-event:nth-child(odd)::before,
+    .timeline-event:nth-child(even)::before {
+        left: 3px;
+        right: auto;
+    }
+
+    .timeline-events {
+        gap: 35px;
+    }
+
+    .timeline-card-content h3 {
+        font-size: 21px;
+    }
+
+    .timeline-ending {
+        padding-top: 60px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .timeline-event {
+        opacity: 1;
+        transform: none;
+    }
+}

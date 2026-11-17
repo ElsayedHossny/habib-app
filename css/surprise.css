@@ -1,0 +1,709 @@
+/* =================================
+   1. Main Layout
+================================= */
+
+.surprise-page {
+    position: relative;
+
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        radial-gradient(ellipse at center,
+            rgba(116, 76, 143, 0.28),
+            transparent 60%),
+        var(--gradient-main);
+}
+
+/* =================================
+   2. Background Glow
+================================= */
+
+.surprise-glow {
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(208, 145, 218, 0.12);
+
+    filter: blur(100px);
+
+    z-index: -1;
+}
+
+/* =================================
+   3. Gift Stage
+================================= */
+
+.gift-stage {
+    width: 100%;
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    transition: opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.surprise-label {
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: var(--color-secondary);
+    opacity: 0.8;
+
+    margin-bottom: 20px;
+}
+
+.surprise-heading {
+    font-family: var(--font-heading);
+
+    font-size: clamp(38px, 7vw, 58px);
+    font-weight: 500;
+
+    color: var(--color-white);
+
+    line-height: 1.2;
+}
+
+.surprise-heading span {
+    display: block;
+
+    font-style: italic;
+
+    color: var(--color-primary);
+}
+
+.gift-instruction {
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    color: var(--color-text-muted);
+}
+
+/* =================================
+   4. Gift Button
+================================= */
+
+.gift-button {
+    position: relative;
+
+    width: 220px;
+    height: 210px;
+
+    margin-top: 55px;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    animation: gift-float 3s ease-in-out infinite;
+}
+
+.gift-button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 8px;
+    border-radius: 20px;
+}
+
+.gift-glow {
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(224, 161, 225, 0.18);
+
+    filter: blur(40px);
+
+    transition: 0.5s ease;
+}
+
+.gift-button:hover .gift-glow {
+    background: rgba(224, 161, 225, 0.35);
+    transform: scale(1.3);
+}
+
+/* =================================
+   5. Gift Box Base
+================================= */
+
+.gift-box {
+    position: relative;
+
+    width: 160px;
+    height: 140px;
+
+    display: block;
+
+    z-index: 2;
+}
+
+.gift-base {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 160px;
+    height: 110px;
+
+    border-radius: 5px 5px 12px 12px;
+
+    background: linear-gradient(135deg,
+            #d89acb,
+            #a978c6);
+
+    box-shadow:
+        inset -10px 0 20px rgba(76, 37, 93, 0.15),
+        0 20px 35px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+.gift-ribbon {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 27px;
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(90deg,
+            #f7d7aa,
+            #ffeac9,
+            #e9bd8c);
+}
+
+.gift-ribbon-horizontal {
+    position: absolute;
+
+    left: 0;
+    top: 20px;
+
+    width: 100%;
+    height: 18px;
+
+    background: linear-gradient(180deg,
+            #f7d7aa,
+            #e9bd8c);
+}
+
+/* =================================
+   6. Gift Lid
+================================= */
+
+.gift-lid {
+    position: absolute;
+
+    top: 0;
+    left: -10px;
+
+    width: 180px;
+    height: 38px;
+
+    border-radius: 7px;
+
+    background: linear-gradient(135deg,
+            #efb6dc,
+            #bd86d0);
+
+    box-shadow:
+        0 7px 15px rgba(0, 0, 0, 0.15);
+
+    z-index: 3;
+
+    transform-origin: 15% 90%;
+
+    transition:
+        transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Ribbon on the lid */
+
+.gift-lid::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 27px;
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(90deg,
+            #f7d7aa,
+            #ffeac9,
+            #e9bd8c);
+}
+
+/* =================================
+   7. Gift Bow
+================================= */
+
+.gift-bow {
+    position: absolute;
+
+    left: 50%;
+    top: -27px;
+
+    width: 60px;
+    height: 35px;
+
+    transform: translateX(-50%);
+
+    z-index: 4;
+}
+
+.gift-bow::before,
+.gift-bow::after {
+    content: "";
+
+    position: absolute;
+
+    width: 28px;
+    height: 23px;
+
+    border: 7px solid #f6d6b0;
+
+    border-radius: 50% 50% 0 50%;
+}
+
+.gift-bow::before {
+    left: 0;
+    transform: rotate(30deg);
+}
+
+.gift-bow::after {
+    right: 0;
+    transform: rotate(60deg) scaleX(-1);
+}
+
+/* =================================
+   8. Gift Opening Animation
+================================= */
+
+.gift-button.is-open {
+    animation: none;
+}
+
+.gift-button.is-open .gift-lid {
+    transform: translate(-20px, -75px) rotate(-35deg);
+}
+
+.gift-button.is-open .gift-glow {
+    transform: scale(2);
+    opacity: 0;
+}
+
+@keyframes gift-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =================================
+   9. Gift Hint
+================================= */
+
+.gift-hint {
+    margin-top: 45px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: var(--color-secondary);
+
+    animation: hint-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hint-pulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* =================================
+   10. Stage Exit
+================================= */
+
+.gift-stage.is-hidden {
+    opacity: 0;
+    transform: translateY(-25px) scale(0.95);
+
+    pointer-events: none;
+}
+
+/* =================================
+   11. Birthday Reveal
+================================= */
+
+.birthday-reveal {
+    position: absolute;
+
+    width: min(90%, 650px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform: translateY(30px) scale(0.95);
+
+    pointer-events: none;
+}
+
+.birthday-reveal:not([hidden]) {
+    animation: reveal-entrance 1s ease forwards;
+
+    pointer-events: auto;
+}
+
+@keyframes reveal-entrance {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.reveal-sparkle {
+    font-size: 55px;
+
+    color: var(--color-accent);
+
+    margin-bottom: 20px;
+
+    animation: sparkle-rotate 5s linear infinite;
+}
+
+@keyframes sparkle-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.reveal-label {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--color-secondary);
+
+    margin-bottom: 20px;
+}
+
+.birthday-title {
+    font-family: var(--font-heading);
+
+    font-size: clamp(43px, 8vw, 75px);
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    background: linear-gradient(90deg,
+            #f6c9e8,
+            #d8a7ed,
+            #f6d8a8);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+.birthday-name {
+    margin-top: 10px;
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(30px, 6vw, 45px);
+
+    font-style: italic;
+
+    color: #ffffff;
+}
+
+.birthday-message {
+    max-width: 440px;
+
+    margin-top: 25px;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: var(--color-text-muted);
+}
+
+.reveal-decoration {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    margin-top: 30px;
+
+    font-size: 20px;
+
+    color: var(--color-secondary);
+}
+
+/* =================================
+   12. Explore Button
+================================= */
+
+.explore-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 35px;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    background: var(--gradient-button);
+
+    color: #352044;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-shadow: var(--shadow-glow);
+
+    transition: 0.3s ease;
+}
+
+.explore-button:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 40px rgba(217, 167, 232, 0.4);
+}
+
+.explore-button span {
+    font-size: 20px;
+}
+
+.reveal-footer {
+    margin-top: 40px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* =================================
+   13. Confetti
+================================= */
+
+.confetti-container {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+.confetti {
+    position: absolute;
+
+    top: -20px;
+    left: var(--confetti-left);
+
+    width: var(--confetti-width);
+    height: var(--confetti-height);
+
+    background: var(--confetti-color);
+
+    opacity: 0;
+
+    border-radius: 2px;
+
+    animation: confetti-fall var(--confetti-duration) linear forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* =================================
+   14. Responsive
+================================= */
+
+@media (max-width: 600px) {
+
+    .surprise-label {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .gift-button {
+        transform: scale(0.9);
+    }
+
+    .birthday-message {
+        font-size: 13px;
+    }
+
+    .reveal-label {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .explore-button {
+        padding: 14px 24px;
+    }
+}
+
+/* =================================
+   15. Reduced Motion
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+
+/* Keep hidden elements out of the layout */
+
+.birthday-reveal[hidden] {
+    display: none !important;
+}
+
+/* =================================
+   16. Birthday Photo
+================================= */
+
+.birthday-photo {
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+    margin-bottom: 25px;
+    padding: 7px;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg,
+            #f6c9e8,
+            #d8a7ed,
+            #f6d8a8);
+
+    box-shadow:
+        0 0 30px rgba(217, 167, 232, 0.3),
+        0 15px 40px rgba(0, 0, 0, 0.2);
+
+    animation: photo-entrance 1.2s ease both;
+}
+
+.birthday-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.photo-heart {
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--color-primary);
+
+    color: white;
+
+    font-size: 25px;
+}
+
+@keyframes photo-entrance {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(-15deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}

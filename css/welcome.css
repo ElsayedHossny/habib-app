@@ -1,0 +1,441 @@
+/* =================================
+   1. Welcome Page Layout
+================================= */
+
+.welcome-page {
+    position: relative;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(ellipse at 50% 45%,
+            rgba(111, 76, 139, 0.22),
+            transparent 55%),
+        var(--gradient-main);
+}
+
+/* =================================
+   2. Background Glow
+================================= */
+
+.ambient-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+    filter: blur(100px);
+
+    opacity: 0.2;
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.ambient-glow-one {
+    top: -120px;
+    left: -100px;
+
+    background: #b77bd4;
+}
+
+.ambient-glow-two {
+    bottom: -150px;
+    right: -100px;
+
+    background: #e5a9d1;
+}
+
+/* =================================
+   3. Stars
+================================= */
+
+.stars-container {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+
+    width: var(--star-size);
+    height: var(--star-size);
+
+    left: var(--star-left);
+    top: var(--star-top);
+
+    background: #ffffff;
+    border-radius: 50%;
+
+    opacity: 0.3;
+
+    box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 15px rgba(217, 167, 232, 0.6);
+
+    animation: twinkle var(--star-duration) ease-in-out infinite;
+    animation-delay: var(--star-delay);
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}
+
+/* =================================
+   4. Welcome Content
+================================= */
+
+.welcome-content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+/* =================================
+   5. Moon
+================================= */
+
+.moon-wrapper {
+    margin-bottom: 40px;
+
+    animation: moon-float 5s ease-in-out infinite;
+}
+
+.moon {
+    position: relative;
+
+    width: 95px;
+    height: 95px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg,
+            #fff6e5,
+            #eac8ee);
+
+    box-shadow:
+        0 0 25px rgba(246, 216, 168, 0.4),
+        0 0 65px rgba(217, 167, 232, 0.35);
+}
+
+.moon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 85px;
+    height: 85px;
+
+    top: -7px;
+    right: -15px;
+
+    border-radius: 50%;
+
+    background: #211a3a;
+}
+
+.moon-crater {
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: rgba(173, 138, 180, 0.2);
+
+    z-index: 1;
+}
+
+.crater-one {
+    top: 25px;
+    left: 23px;
+}
+
+.crater-two {
+    top: 55px;
+    left: 40px;
+}
+
+.crater-three {
+    top: 40px;
+    left: 15px;
+}
+
+@keyframes moon-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =================================
+   6. Typography
+================================= */
+
+.welcome-label {
+    margin-bottom: 22px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    color: var(--color-secondary);
+
+    opacity: 0.85;
+}
+
+.welcome-title {
+    font-family: var(--font-heading);
+
+    font-size: clamp(42px, 7vw, 76px);
+    font-weight: 500;
+
+    line-height: 1.15;
+    letter-spacing: -1px;
+
+    color: var(--color-white);
+}
+
+.welcome-title span {
+    display: block;
+
+    margin-top: 8px;
+
+    font-style: italic;
+
+    background: linear-gradient(90deg,
+            #f5c8e9,
+            #d5a9ed,
+            #f6d8a8);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.welcome-description {
+    max-width: 470px;
+
+    margin-top: 25px;
+
+    font-size: 15px;
+    line-height: 1.9;
+
+    color: var(--color-text-muted);
+}
+
+/* =================================
+   7. Start Button
+================================= */
+
+.start-button {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 38px;
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    background: var(--gradient-button);
+
+    color: #352044;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 30px rgba(217, 167, 232, 0.25);
+
+    transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.start-button:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 40px rgba(217, 167, 232, 0.4);
+}
+
+.start-button:active {
+    transform: scale(0.96);
+}
+
+.button-icon {
+    font-size: 18px;
+
+    transition: transform var(--transition-fast);
+}
+
+.start-button:hover .button-icon {
+    transform: rotate(45deg);
+}
+
+/* Keyboard Accessibility */
+
+.start-button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 5px;
+}
+
+/* =================================
+   8. Footer
+================================= */
+
+.welcome-footer {
+    margin-top: 55px;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.welcome-footer span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #e9a9d1;
+    font-size: 15px;
+}
+
+/* =================================
+   9. Bottom Decoration
+================================= */
+
+.bottom-decoration {
+    position: absolute;
+
+    bottom: 25px;
+    left: 50%;
+
+    display: flex;
+    gap: 18px;
+
+    transform: translateX(-50%);
+
+    color: var(--color-secondary);
+    opacity: 0.5;
+}
+
+.bottom-decoration span:nth-child(2) {
+    font-size: 20px;
+}
+
+/* =================================
+   10. Responsive Design
+================================= */
+
+@media (max-width: 600px) {
+
+    .welcome-page {
+        padding: 35px 20px;
+    }
+
+    .moon {
+        width: 75px;
+        height: 75px;
+    }
+
+    .moon::after {
+        width: 68px;
+        height: 68px;
+
+        top: -6px;
+        right: -12px;
+    }
+
+    .moon-wrapper {
+        margin-bottom: 35px;
+    }
+
+    .welcome-label {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
+
+    .welcome-title {
+        font-size: clamp(38px, 10vw, 52px);
+    }
+
+    .welcome-description {
+        font-size: 13px;
+        max-width: 330px;
+    }
+
+    .start-button {
+        padding: 14px 30px;
+    }
+
+    .welcome-footer {
+        margin-top: 45px;
+    }
+
+    .ambient-glow {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* =================================
+   11. Reduced Motion
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

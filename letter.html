@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Letter For You | With Love</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/letter.css">
+
+    <script src="js/letter.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="letter-header">
+        <a href="home.html" class="brand">Our Little World</a>
+
+        <nav class="letter-nav" aria-label="Main navigation">
+            <a href="home.html">Home</a>
+            <a href="memories.html">Memories</a>
+            <a href="timeline.html">Timeline</a>
+            <a href="letter.html" class="active">A Letter</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Introduction -->
+        <section class="letter-intro">
+            <span class="eyebrow">A little something from my heart</span>
+
+            <h1>Words I want you <em>to keep forever.</em></h1>
+
+            <p>
+                Some feelings are too special to be said in a moment.
+                So I wrote them down for you.
+            </p>
+        </section>
+
+        <!-- Letter Experience -->
+        <section class="letter-experience">
+
+            <p class="envelope-hint" id="envelope-hint">
+                A little letter, just for you. Tap to open ♡
+            </p>
+
+            <!-- Envelope -->
+            <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open your birthday letter"
+                aria-expanded="false">
+
+                <div class="envelope-back"></div>
+
+                <div class="letter-paper-preview">
+                    <span>To my favorite person ♡</span>
+                </div>
+
+                <div class="envelope-front"></div>
+
+                <div class="envelope-flap"></div>
+
+                <div class="envelope-heart">♡</div>
+
+            </div>
+
+            <!-- Letter Content -->
+            <article class="letter-paper" id="letter-paper" hidden>
+
+                <div class="paper-decoration">♡</div>
+
+                <p class="letter-greeting" id="letter-greeting"></p>
+
+                <div class="letter-message" id="letter-message" aria-live="polite"></div>
+
+                <p class="letter-signature" id="letter-signature"></p>
+
+                <div class="paper-bottom-heart">With all my love ♡</div>
+
+            </article>
+
+            <button class="replay-button" id="replay-button" hidden>
+                Read it again ♡
+            </button>
+
+        </section>
+
+        <!-- Closing -->
+        <section class="letter-closing">
+            <h2>One more thing...</h2>
+
+            <p>
+                No matter how many birthdays come and go,
+                I'll always be grateful that you're part of my story.
+            </p>
+
+            <a href="home.html" class="letter-home-button">
+                Back to our little world
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="letter-footer">
+        <p>In every universe, I'd choose you. ♡</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+/* =================================
+   1. CSS Variables
+================================= */
+
+:root {
+    /* Main Colors */
+    --color-background: #171329;
+    --color-background-light: #211a3a;
+
+    --color-primary: #d9a7e8;
+    --color-secondary: #f1c9e5;
+    --color-accent: #f6d8a8;
+
+    --color-white: #ffffff;
+    --color-text: #f8edf9;
+    --color-text-muted: #c5b5d2;
+
+    /* Gradients */
+    --gradient-main: linear-gradient(135deg,
+            #171329,
+            #282044,
+            #35234b);
+
+    --gradient-button: linear-gradient(135deg,
+            #edb9df,
+            #c79de8);
+
+    /* Fonts */
+    --font-primary: "DM Sans", sans-serif;
+    --font-heading: "Playfair Display", serif;
+
+    /* Effects */
+    --shadow-glow: 0 0 35px rgba(217, 167, 232, 0.25);
+
+    /* Transitions */
+    --transition-fast: 0.3s ease;
+    --transition-normal: 0.5s ease;
+}
+
+/* =================================
+   2. Reset
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    background: var(--color-background);
+}
+
+button,
+a {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* =================================
+   3. Shared Utilities
+================================= */
+
+.container {
+    width: min(90%, 1200px);
+    margin-inline: auto;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg,
+            #f5c8e9,
+            #d5a9ed,
+            #f6d8a8);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
