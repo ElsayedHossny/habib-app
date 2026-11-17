@@ -5,7 +5,7 @@
 const memories = [
   {
     id: 1,
-    src: "assets/images/memories/memory-01.jpg",
+    src: "assets/images/memories/memory-01.JPG",
     category: "together",
     title: "A beautiful day",
     date: "Our special day",
@@ -14,7 +14,7 @@ const memories = [
 
   {
     id: 2,
-    src: "assets/images/memories/memory-02.jpg",
+    src: "assets/images/memories/memory-02.JPG",
     category: "her",
     title: "My favorite smile",
     date: "A lovely memory",
@@ -23,7 +23,7 @@ const memories = [
 
   {
     id: 3,
-    src: "assets/images/memories/memory-03.jpg",
+    src: "assets/images/memories/memory-03.JPG",
     category: "special",
     title: "A moment to remember",
     date: "A special occasion",
@@ -41,7 +41,7 @@ const memories = [
 
   {
     id: 5,
-    src: "assets/images/memories/memory-05.jpg",
+    src: "assets/images/memories/memory-05.JPG",
     category: "her",
     title: "Simply beautiful",
     date: "A favorite memory",
@@ -50,7 +50,7 @@ const memories = [
 
   {
     id: 6,
-    src: "assets/images/memories/memory-06.jpg",
+    src: "assets/images/memories/memory-06.JPG",
     category: "special",
     title: "Forever in my heart",
     date: "A day I'll never forget",
