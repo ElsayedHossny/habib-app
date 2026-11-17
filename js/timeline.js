@@ -7,7 +7,7 @@ const timelineEvents = [
     id: 1,
     date: "The beginning",
     title: "Our First Hello",
-    image: "assets/images/timeline/moment-01.JPG",
+    image: "assets/images/timeline/moment-01.jpg",
     description:
       "Every beautiful story has a beginning. And I'm so glad ours started.",
   },
@@ -16,7 +16,7 @@ const timelineEvents = [
     id: 2,
     date: "A special day",
     title: "The First Memory",
-    image: "assets/images/timeline/moment-02.JPG",
+    image: "assets/images/timeline/moment-02.jpg",
     description: "A moment that became one of my favorite memories with you.",
   },
 
@@ -24,7 +24,7 @@ const timelineEvents = [
     id: 3,
     date: "A beautiful chapter",
     title: "Getting Closer",
-    image: "assets/images/timeline/moment-03.JPG",
+    image: "assets/images/timeline/moment-03.jpg",
     description:
       "With every conversation and every moment, you became more special to me.",
   },
